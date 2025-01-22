@@ -1,32 +1,30 @@
 package com.devsuperior.dslist.entities;
 
 import jakarta.persistence.*;
-import org.aspectj.weaver.loadtime.definition.Definition;
-import org.hibernate.annotations.ColumnDefault;
 
 import java.util.Objects;
 
-@Entity
-@Table(name = "tb_game")
+@Entity // Associa a classe ao banco de dados fazendo com que seja criado uma tabela para os atributos da classe
+@Table(name = "tb_game") // A tabela criada será com o nome passado no argumento.
 public class Game {
 
     // Atributos de Classe
-    @Id()
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id() // Faz com que o próximo atributos seja uma chave primária
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Gera ID automáticamente.
     private Long id;
     private String title;
 
-    @Column(name = "game_year")
+    @Column(name = "game_year") // O nome passado como argumento será o nome da coluna do próximo atributo
     private Integer year;
     private String genre;
     private String platforms;
     private Double score;
     private String imgUrl;
 
-    @Lob
+    @Lob // Esta anotação faz com que o próximo atributo aceite mais de 255 character no banco de dados.
     private String shortDescription;
 
-    @Lob
+    @Lob // Esta anotação faz com que o próximo atributo aceite mais de 255 character no banco de dados.
     private String longDescription;
 
 
@@ -47,7 +45,6 @@ public class Game {
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
     }
-
 
 
     // region Equals & HashCode
