@@ -1,19 +1,16 @@
 package com.devsuperior.dslist.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.Objects;
 
-@Entity
-@Table(name = "tb_game_list")
+@Entity // Criação de tabela para esta classe no banco de dados
+@Table(name = "tb_game_list") // Esta tabela criada será chamada conforme string passada no argumento
 public class GameList {
 
     // Atributos de Classe
-    @jakarta.persistence.Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @jakarta.persistence.Id // ID primary key criada
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // O id será autoincrimentado conforme sua indentação
     private Long Id;
     private String name;
 

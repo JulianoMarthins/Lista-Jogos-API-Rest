@@ -6,16 +6,16 @@ import jakarta.persistence.ManyToOne;
 
 import java.util.Objects;
 
-@Embeddable // Encapsula dois atributos em uma só classe
+@Embeddable // Encapsula dois objetos, game e gamelist, em uma só classe
 public class BelongingPK {
 
     // Atributos de classe
-    @ManyToOne
-    @JoinColumn(name = "game_id")
+    @ManyToOne // Cria relação muitos para um
+    @JoinColumn(name = "game_id") // Nome da chave estrangeira
     private Game game;
 
-    @ManyToOne
-    @JoinColumn(name = "list_id")
+    @ManyToOne // Cria relação muitos para um
+    @JoinColumn(name = "list_id") // Nome da chave estrangeira
     private GameList gameList;
 
     // Construtores
